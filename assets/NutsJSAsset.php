@@ -9,16 +9,22 @@ namespace HD\yii\Nuts\assets;
 use Yii;
 use yii\web\AssetBundle;
 
-class SemanticUICSSAsset extends AssetBundle
+class NutsJSAsset extends AssetBundle
 {
     /**
      * @var string
      */
     public $sourcePath = '@vendor/bower/semantic/dist';
+    /**
+     * @var array
+     */
+    public $depends = [
+        'yii\web\JqueryAsset',
+        'HD\yii\Nuts\assets\NutsCSSAsset'
+    ];
     public function init()
     {
-        $postfix = YII_DEBUG ? '' : '.min';
-        $this->css[] = 'semantic' . $postfix . '.css';
+        $this->js[] = 'semantic.min.js';
         parent::init();
     }
 }

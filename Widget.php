@@ -6,7 +6,7 @@
  */
 namespace HD\yii\Nuts;
 
-use HD\yii\Nuts\assets\SemanticUIJSAsset;
+use HD\yii\Nuts\assets\NutsJSAsset;
 
 class Widget extends \yii\base\Widget
 {
@@ -27,6 +27,6 @@ class Widget extends \yii\base\Widget
     }
     public function registerJsAsset()
     {
-        SemanticUIJSAsset::register($this->getView());
+        NutsJSAsset::register($this->getView());
     }
 }
