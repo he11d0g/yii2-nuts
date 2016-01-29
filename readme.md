@@ -36,7 +36,7 @@ $ composer require he11d0g/yii2-nuts
 ```
 'HD\yii\Nuts\assets\NutsCSSAsset',
 ```
-Примеры использования и инструкции можной посмотеть [тут][ext_url]
+Примеры использования и инструкции можно посмотеть [тут][ext_url]
 
 
    [semantic]: <http://semantic-ui.com/>
