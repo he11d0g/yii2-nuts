@@ -40,7 +40,7 @@ $ composer require he11d0g/yii2-nuts
 
 
    [semantic]: <http://semantic-ui.com/>
-   [ext_url]: <http://yii2-nuts.helldog.net>
+   [ext_url]: <http://yii-nuts.helldog.net>
    [composer_url]: <https://getcomposer.org/>
    
 
