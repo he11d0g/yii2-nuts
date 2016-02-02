@@ -46,8 +46,8 @@ class Dropdown extends Widget
     public function renderItems()
     {
         $out = Html::input('hidden',$this->name,$this->value,$this->inputOptions);
-        $out .= Elements::icon('dropdown');
         $out .= Html::tag('div','',['class' => 'text']);
+        $out .= Elements::icon('dropdown');
         $elems = '';
         foreach($this->items as $item){
             $elems .= $this->renderItem($item);
