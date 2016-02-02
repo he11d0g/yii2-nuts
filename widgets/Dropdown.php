@@ -19,19 +19,18 @@ class Dropdown extends Widget
     /**
      * @var array
      */
-    public $titleOptions = [];
-    /**
-     * @var array
-     */
     public $inputOptions = [];
     /**
      * @var bool
      */
-
     public $options = [];
-
+    /**
+     * @var bool
+     */
     public $value = null;
-
+    /**
+     * @var bool
+     */
     public $name = null;
 
 

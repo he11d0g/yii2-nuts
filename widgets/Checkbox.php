@@ -4,9 +4,6 @@ namespace HD\yii\Nuts\widgets;
 
 use Yii;
 use yii\helpers\Html;
-use yii\helpers\ArrayHelper;
-use yii\helpers\Url;
-use HD\yii\Nuts\Elements;
 use HD\yii\Nuts\Widget;
 
 class Checkbox extends Widget
