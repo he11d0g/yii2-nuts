@@ -12,6 +12,17 @@ use HD\yii\Nuts\Widget;
 class Dropdown extends Widget
 {
 
+    const STYLE_SELECTION = 'selection';
+    const STYLE_SELECTION_SEARCH = 'selection search';
+    const STYLE_NONE = '';
+    const STYLE_SEARCH = 'search';
+    const STYLE_LOADING = 'loading';
+    const STYLE_SELECTION_LOADING = 'selection loading';
+
+    /**
+     * @var string
+     */
+    public $style = self::STYLE_SELECTION;
     /**
      * @var array
      */
@@ -38,6 +49,9 @@ class Dropdown extends Widget
     {
         $this->registerJs();
         Html::addCssClass($this->options, 'ui dropdown');
+        if($this->style){
+            Html::addCssClass($this->options, $this->style);
+        }
 
         echo Html::tag('div', $this->renderItems(), $this->options);
     }
@@ -61,10 +75,12 @@ class Dropdown extends Widget
     {
         $options = ArrayHelper::getValue($item, 'options');
         $options['data-value'] = ArrayHelper::getValue($item,'value');
-
+        $icon = ArrayHelper::getValue($item,'icon');
+        $tag = ArrayHelper::getValue($item,'tag');
+        $body = $icon ? '<i class="'.$icon.' icon"></i>'. ArrayHelper::getValue($item, 'label') : ArrayHelper::getValue($item, 'label');
         Html::addCssClass($options, 'item');
 
-        return Html::tag('div', ArrayHelper::getValue($item, 'label'), $options);
+        return Html::tag( $tag ?: 'div' , $body , $options);
     }
 
     public function registerJs()
