@@ -16,9 +16,11 @@ class Dropdown extends Widget
     const STYLE_SELECTION_SEARCH = 'selection search';
     const STYLE_NONE = '';
     const STYLE_SEARCH = 'search';
-    const STYLE_LOADING = 'loading';
-    const STYLE_SELECTION_LOADING = 'selection loading';
 
+    /**
+     * @var string
+     */
+    public $loading = false;
     /**
      * @var string
      */
@@ -51,6 +53,9 @@ class Dropdown extends Widget
         Html::addCssClass($this->options, 'ui dropdown');
         if($this->style){
             Html::addCssClass($this->options, $this->style);
+        }
+        if($this->loading){
+            Html::addCssClass($this->options, 'loading');
         }
 
         echo Html::tag('div', $this->renderItems(), $this->options);
