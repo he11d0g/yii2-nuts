@@ -104,8 +104,7 @@ class Progress extends Widget
                 }'
             : '';
 
-        $script = 'setInterval(function(){
-        jQuery.ajax({
+        $func = 'jQuery.ajax({
             url: "'.$url.'",
             method: "'.$method.'",
             data: '.$data.',
@@ -114,7 +113,8 @@ class Progress extends Widget
                 jQuery("#' . $this->options['id'] . '").progress(data);
                 '.$autoHide.'
             }
-        })},'.$interval.')';
+        })';
+        $script = $func.'setInterval(function(){'.$func.'},'.$interval.')';
         $this->getView()->registerJs($script);
     }
 
