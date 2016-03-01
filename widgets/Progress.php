@@ -113,7 +113,7 @@ class Progress extends Widget
                 jQuery("#' . $this->options['id'] . '").progress(data);
                 '.$autoHide.'
             }
-        })';
+        });'.PHP_EOL;
         $script = $func.'setInterval(function(){'.$func.'},'.$interval.')';
         $this->getView()->registerJs($script);
     }
